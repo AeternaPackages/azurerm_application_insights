@@ -1,4 +1,9 @@
 # --- azurerm_application_insights ---
+output "application_insightses_id" {
+  description = "Map of id values across all application_insightses, keyed the same as var.application_insightses"
+  value       = module.application_insightses.application_insightses_id
+}
+
 output "application_insightses_app_id" {
   description = "Map of app_id values across all application_insightses, keyed the same as var.application_insightses"
   value       = module.application_insightses.application_insightses_app_id
@@ -107,6 +112,11 @@ output "application_insightses_workspace_id" {
 }
 
 # --- azurerm_application_insights_analytics_item ---
+output "application_insights_analytics_items_id" {
+  description = "Map of id values across all application_insights_analytics_items, keyed the same as var.application_insights_analytics_items"
+  value       = module.application_insights_analytics_items.application_insights_analytics_items_id
+}
+
 output "application_insights_analytics_items_application_insights_id" {
   description = "Map of application_insights_id values across all application_insights_analytics_items, keyed the same as var.application_insights_analytics_items"
   value       = module.application_insights_analytics_items.application_insights_analytics_items_application_insights_id
@@ -153,6 +163,11 @@ output "application_insights_analytics_items_version" {
 }
 
 # --- azurerm_application_insights_api_key ---
+output "application_insights_api_keys_id" {
+  description = "Map of id values across all application_insights_api_keys, keyed the same as var.application_insights_api_keys"
+  value       = module.application_insights_api_keys.application_insights_api_keys_id
+}
+
 output "application_insights_api_keys_api_key" {
   description = "Map of api_key values across all application_insights_api_keys, keyed the same as var.application_insights_api_keys"
   value       = module.application_insights_api_keys.application_insights_api_keys_api_key
@@ -180,6 +195,11 @@ output "application_insights_api_keys_write_permissions" {
 }
 
 # --- azurerm_application_insights_smart_detection_rule ---
+output "application_insights_smart_detection_rules_id" {
+  description = "Map of id values across all application_insights_smart_detection_rules, keyed the same as var.application_insights_smart_detection_rules"
+  value       = module.application_insights_smart_detection_rules.application_insights_smart_detection_rules_id
+}
+
 output "application_insights_smart_detection_rules_additional_email_recipients" {
   description = "Map of additional_email_recipients values across all application_insights_smart_detection_rules, keyed the same as var.application_insights_smart_detection_rules"
   value       = module.application_insights_smart_detection_rules.application_insights_smart_detection_rules_additional_email_recipients
@@ -206,6 +226,11 @@ output "application_insights_smart_detection_rules_send_emails_to_subscription_o
 }
 
 # --- azurerm_application_insights_standard_web_test ---
+output "application_insights_standard_web_tests_id" {
+  description = "Map of id values across all application_insights_standard_web_tests, keyed the same as var.application_insights_standard_web_tests"
+  value       = module.application_insights_standard_web_tests.application_insights_standard_web_tests_id
+}
+
 output "application_insights_standard_web_tests_application_insights_id" {
   description = "Map of application_insights_id values across all application_insights_standard_web_tests, keyed the same as var.application_insights_standard_web_tests"
   value       = module.application_insights_standard_web_tests.application_insights_standard_web_tests_application_insights_id
@@ -277,6 +302,11 @@ output "application_insights_standard_web_tests_validation_rules" {
 }
 
 # --- azurerm_application_insights_web_test ---
+output "application_insights_web_tests_id" {
+  description = "Map of id values across all application_insights_web_tests, keyed the same as var.application_insights_web_tests"
+  value       = module.application_insights_web_tests.application_insights_web_tests_id
+}
+
 output "application_insights_web_tests_application_insights_id" {
   description = "Map of application_insights_id values across all application_insights_web_tests, keyed the same as var.application_insights_web_tests"
   value       = module.application_insights_web_tests.application_insights_web_tests_application_insights_id
