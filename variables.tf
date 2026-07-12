@@ -1,6 +1,6 @@
-variable "application_insightses" {
+variable "application_insights" {
   description = <<EOT
-Map of application_insightses, attributes below
+Map of application_insights, attributes below
 Required:
     - application_type
     - location
@@ -162,12 +162,12 @@ EOT
 
   validation {
     condition = alltrue(concat(
-      [for kk in keys(var.application_insightses) : !strcontains(kk, "/")],
-      flatten([for k0, v0 in var.application_insightses : [for kk in keys(coalesce(v0.application_insights_analytics_items, {})) : !strcontains(kk, "/")]]),
-      flatten([for k0, v0 in var.application_insightses : [for kk in keys(coalesce(v0.application_insights_api_keys, {})) : !strcontains(kk, "/")]]),
-      flatten([for k0, v0 in var.application_insightses : [for kk in keys(coalesce(v0.application_insights_smart_detection_rules, {})) : !strcontains(kk, "/")]]),
-      flatten([for k0, v0 in var.application_insightses : [for kk in keys(coalesce(v0.application_insights_standard_web_tests, {})) : !strcontains(kk, "/")]]),
-      flatten([for k0, v0 in var.application_insightses : [for kk in keys(coalesce(v0.application_insights_web_tests, {})) : !strcontains(kk, "/")]])
+      [for kk in keys(var.application_insights) : !strcontains(kk, "/")],
+      flatten([for k0, v0 in var.application_insights : [for kk in keys(coalesce(v0.application_insights_analytics_items, {})) : !strcontains(kk, "/")]]),
+      flatten([for k0, v0 in var.application_insights : [for kk in keys(coalesce(v0.application_insights_api_keys, {})) : !strcontains(kk, "/")]]),
+      flatten([for k0, v0 in var.application_insights : [for kk in keys(coalesce(v0.application_insights_smart_detection_rules, {})) : !strcontains(kk, "/")]]),
+      flatten([for k0, v0 in var.application_insights : [for kk in keys(coalesce(v0.application_insights_standard_web_tests, {})) : !strcontains(kk, "/")]]),
+      flatten([for k0, v0 in var.application_insights : [for kk in keys(coalesce(v0.application_insights_web_tests, {})) : !strcontains(kk, "/")]])
     ))
     error_message = "Map keys in this package must not contain '/': it is used internally as a nesting-key separator, so a key containing it can silently collide two different nested entries into one. Rename the offending key(s)."
   }
