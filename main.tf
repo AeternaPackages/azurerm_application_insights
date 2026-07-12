@@ -5,7 +5,7 @@ locals {
     for k1, v1 in var.application_insightses : {
       for k2, v2 in coalesce(v1.application_insights_analytics_items, {}) :
       "${k1}/${k2}" => merge(v2, {
-        application_insights_id = module.application_insightses.application_insightses["${k1}"].id
+        application_insights_id = module.application_insightses.application_insightses_id["${k1}"]
       })
     }
   ]...)
@@ -14,7 +14,7 @@ locals {
     for k1, v1 in var.application_insightses : {
       for k2, v2 in coalesce(v1.application_insights_api_keys, {}) :
       "${k1}/${k2}" => merge(v2, {
-        application_insights_id = module.application_insightses.application_insightses["${k1}"].id
+        application_insights_id = module.application_insightses.application_insightses_id["${k1}"]
       })
     }
   ]...)
@@ -23,7 +23,7 @@ locals {
     for k1, v1 in var.application_insightses : {
       for k2, v2 in coalesce(v1.application_insights_smart_detection_rules, {}) :
       "${k1}/${k2}" => merge(v2, {
-        application_insights_id = module.application_insightses.application_insightses["${k1}"].id
+        application_insights_id = module.application_insightses.application_insightses_id["${k1}"]
       })
     }
   ]...)
@@ -32,7 +32,7 @@ locals {
     for k1, v1 in var.application_insightses : {
       for k2, v2 in coalesce(v1.application_insights_standard_web_tests, {}) :
       "${k1}/${k2}" => merge(v2, {
-        application_insights_id = module.application_insightses.application_insightses["${k1}"].id
+        application_insights_id = module.application_insightses.application_insightses_id["${k1}"]
       })
     }
   ]...)
@@ -41,7 +41,7 @@ locals {
     for k1, v1 in var.application_insightses : {
       for k2, v2 in coalesce(v1.application_insights_web_tests, {}) :
       "${k1}/${k2}" => merge(v2, {
-        application_insights_id = module.application_insightses.application_insightses["${k1}"].id
+        application_insights_id = module.application_insightses.application_insightses_id["${k1}"]
       })
     }
   ]...)
