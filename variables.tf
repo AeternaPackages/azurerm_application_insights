@@ -79,19 +79,19 @@ EOT
     location                              = string
     name                                  = string
     resource_group_name                   = string
-    sampling_percentage                   = optional(number) # Default: 100
-    retention_in_days                     = optional(number) # Default: 90
+    sampling_percentage                   = optional(number)
+    retention_in_days                     = optional(number)
     local_authentication_enabled          = optional(bool)
     local_authentication_disabled         = optional(bool)
     ip_masking_enabled                    = optional(bool)
-    internet_query_enabled                = optional(bool) # Default: true
-    force_customer_storage_for_profiler   = optional(bool) # Default: false
+    internet_query_enabled                = optional(bool)
+    force_customer_storage_for_profiler   = optional(bool)
     tags                                  = optional(map(string))
     disable_ip_masking                    = optional(bool)
     daily_data_cap_notifications_enabled  = optional(bool)
     daily_data_cap_notifications_disabled = optional(bool)
-    daily_data_cap_in_gb                  = optional(number) # Default: 100
-    internet_ingestion_enabled            = optional(bool)   # Default: true
+    daily_data_cap_in_gb                  = optional(number)
+    internet_ingestion_enabled            = optional(bool)
     workspace_id                          = optional(string)
     application_insights_analytics_items = optional(map(object({
       content        = string
@@ -108,8 +108,8 @@ EOT
     application_insights_smart_detection_rules = optional(map(object({
       name                               = string
       additional_email_recipients        = optional(set(string))
-      enabled                            = optional(bool) # Default: true
-      send_emails_to_subscription_owners = optional(bool) # Default: true
+      enabled                            = optional(bool)
+      send_emails_to_subscription_owners = optional(bool)
     })))
     application_insights_standard_web_tests = optional(map(object({
       geo_locations       = list(string)
@@ -118,30 +118,30 @@ EOT
       resource_group_name = string
       description         = optional(string)
       enabled             = optional(bool)
-      frequency           = optional(number) # Default: 300
+      frequency           = optional(number)
       retry_enabled       = optional(bool)
       tags                = optional(map(string))
-      timeout             = optional(number) # Default: 30
+      timeout             = optional(number)
       request = object({
         body                     = optional(string)
-        follow_redirects_enabled = optional(bool) # Default: true
+        follow_redirects_enabled = optional(bool)
         header = optional(list(object({
           name  = string
           value = string
         })))
-        http_verb                        = optional(string) # Default: "GET"
-        parse_dependent_requests_enabled = optional(bool)   # Default: true
+        http_verb                        = optional(string)
+        parse_dependent_requests_enabled = optional(bool)
         url                              = string
       })
       validation_rules = optional(object({
         content = optional(object({
           content_match      = string
-          ignore_case        = optional(bool) # Default: false
-          pass_if_text_found = optional(bool) # Default: false
+          ignore_case        = optional(bool)
+          pass_if_text_found = optional(bool)
         }))
-        expected_status_code        = optional(number) # Default: 200
+        expected_status_code        = optional(number)
         ssl_cert_remaining_lifetime = optional(number)
-        ssl_check_enabled           = optional(bool) # Default: false
+        ssl_check_enabled           = optional(bool)
       }))
     })))
     application_insights_web_tests = optional(map(object({
@@ -153,10 +153,10 @@ EOT
       resource_group_name = string
       description         = optional(string)
       enabled             = optional(bool)
-      frequency           = optional(number) # Default: 300
+      frequency           = optional(number)
       retry_enabled       = optional(bool)
       tags                = optional(map(string))
-      timeout             = optional(number) # Default: 30
+      timeout             = optional(number)
     })))
   }))
 
