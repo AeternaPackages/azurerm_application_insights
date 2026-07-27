@@ -48,36 +48,36 @@ locals {
 }
 
 module "application_insights" {
-  source               = "git::https://github.com/AeternaModules/azurerm_application_insights.git?ref=v4.80.0"
+  source               = "git::https://github.com/AeternaModules/azurerm_application_insights.git?ref=v4.81.0"
   application_insights = local.application_insights
 }
 
 module "application_insights_analytics_items" {
-  source                               = "git::https://github.com/AeternaModules/azurerm_application_insights_analytics_item.git?ref=v4.80.0"
+  source                               = "git::https://github.com/AeternaModules/azurerm_application_insights_analytics_item.git?ref=v4.81.0"
   application_insights_analytics_items = local.application_insights_analytics_items
   depends_on                           = [module.application_insights]
 }
 
 module "application_insights_api_keys" {
-  source                        = "git::https://github.com/AeternaModules/azurerm_application_insights_api_key.git?ref=v4.80.0"
+  source                        = "git::https://github.com/AeternaModules/azurerm_application_insights_api_key.git?ref=v4.81.0"
   application_insights_api_keys = local.application_insights_api_keys
   depends_on                    = [module.application_insights]
 }
 
 module "application_insights_smart_detection_rules" {
-  source                                     = "git::https://github.com/AeternaModules/azurerm_application_insights_smart_detection_rule.git?ref=v4.80.0"
+  source                                     = "git::https://github.com/AeternaModules/azurerm_application_insights_smart_detection_rule.git?ref=v4.81.0"
   application_insights_smart_detection_rules = local.application_insights_smart_detection_rules
   depends_on                                 = [module.application_insights]
 }
 
 module "application_insights_standard_web_tests" {
-  source                                  = "git::https://github.com/AeternaModules/azurerm_application_insights_standard_web_test.git?ref=v4.80.0"
+  source                                  = "git::https://github.com/AeternaModules/azurerm_application_insights_standard_web_test.git?ref=v4.81.0"
   application_insights_standard_web_tests = local.application_insights_standard_web_tests
   depends_on                              = [module.application_insights]
 }
 
 module "application_insights_web_tests" {
-  source                         = "git::https://github.com/AeternaModules/azurerm_application_insights_web_test.git?ref=v4.80.0"
+  source                         = "git::https://github.com/AeternaModules/azurerm_application_insights_web_test.git?ref=v4.81.0"
   application_insights_web_tests = local.application_insights_web_tests
   depends_on                     = [module.application_insights]
 }
