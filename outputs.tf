@@ -25,19 +25,9 @@ output "application_insights_daily_data_cap_in_gb" {
   value       = module.application_insights.application_insights_daily_data_cap_in_gb
 }
 
-output "application_insights_daily_data_cap_notifications_disabled" {
-  description = "Map of daily_data_cap_notifications_disabled values across all application_insights, keyed the same as var.application_insights"
-  value       = module.application_insights.application_insights_daily_data_cap_notifications_disabled
-}
-
 output "application_insights_daily_data_cap_notifications_enabled" {
   description = "Map of daily_data_cap_notifications_enabled values across all application_insights, keyed the same as var.application_insights"
   value       = module.application_insights.application_insights_daily_data_cap_notifications_enabled
-}
-
-output "application_insights_disable_ip_masking" {
-  description = "Map of disable_ip_masking values across all application_insights, keyed the same as var.application_insights"
-  value       = module.application_insights.application_insights_disable_ip_masking
 }
 
 output "application_insights_force_customer_storage_for_profiler" {
@@ -64,11 +54,6 @@ output "application_insights_internet_query_enabled" {
 output "application_insights_ip_masking_enabled" {
   description = "Map of ip_masking_enabled values across all application_insights, keyed the same as var.application_insights"
   value       = module.application_insights.application_insights_ip_masking_enabled
-}
-
-output "application_insights_local_authentication_disabled" {
-  description = "Map of local_authentication_disabled values across all application_insights, keyed the same as var.application_insights"
-  value       = module.application_insights.application_insights_local_authentication_disabled
 }
 
 output "application_insights_local_authentication_enabled" {
